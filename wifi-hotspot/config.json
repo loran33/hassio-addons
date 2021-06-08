@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "slug": "hotspot-wifi",
   "panel_icon": "mdi:wifi",
-  "description": "Connect directly your wifi sensors / cams / lights / outlets to hassio for a perfect devices isolation",
+  "description": "Connect directly your wifi sensors to hassio for a perfect devices isolation",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "url": "https://github.com/loran33/hassio-addons",
   "startup": "system",
@@ -13,18 +13,10 @@
   "host_dbus": true,
   "full_access": true,
   "privileged": [
-    "NET_ADMIN",
-    "SYS_ADMIN",
-    "SYS_RAWIO",
-    "SYS_TIME",
-    "SYS_NICE"
+    "NET_ADMIN"
   ],
   "map": [
-    "config:rw",
-    "ssl:rw",
-    "addons:rw",
-    "share:rw",
-    "backup:rw"
+    "addons:rw"
   ],
   "devices": [
     "/dev/rfkill"
