@@ -1,0 +1,62 @@
+{
+  "name": "hotspot wifi",
+  "version": "0.0.3",
+  "slug": "hotspot-wifi",
+  "panel_icon": "mdi:wifi",
+  "description": "Connect directly your wifi sensors / cams / lights / outlets to hassio for a perfect devices isolation",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "url": "https://github.com/loran33/hassio-addons",
+  "startup": "system",
+  "boot": "auto",
+  "host_network": true,
+  "apparmor": false,
+  "host_dbus": true,
+  "full_access": true,
+  "privileged": [
+    "NET_ADMIN",
+    "SYS_ADMIN",
+    "SYS_RAWIO",
+    "SYS_TIME",
+    "SYS_NICE"
+  ],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "share:rw",
+    "backup:rw"
+  ],
+  "devices": [
+    "/dev/rfkill"
+  ],
+  "options": {
+    "interface": "wlan0",
+    "ssid": "!secret iot_ssid",
+    "wpa_passphrase": "!secret iot_passphrase",
+    "channel": "11",
+    "network": "11.0.0.0",
+    "address": "11.0.0.1",
+    "netmask": "255.255.255.0",
+    "broadcast": "11.0.0.255",
+    "fixed_ips": [{
+      "name": "outlet1",
+      "mac_address": "00:00:00:00:00",
+      "ip": "11.0.0.10"
+    }]
+  },
+  "schema": {
+    "interface": "str",
+    "ssid": "str",
+    "wpa_passphrase": "str",
+    "channel": "int",
+    "network": "str",
+    "address": "str",
+    "netmask": "str",
+    "broadcast": "str",
+    "fixed_ips": [{
+      "name": "str",
+      "mac_address": "str",
+      "ip": "str"
+    }]
+  }
+} 
