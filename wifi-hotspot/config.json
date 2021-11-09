@@ -1,6 +1,6 @@
 {
   "name": "hotspot wifi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "slug": "hotspot-wifi",
   "panel_icon": "mdi:wifi",
   "description": "Connect directly your wifi sensors to hassio for a perfect devices isolation",
@@ -13,10 +13,18 @@
   "host_dbus": true,
   "full_access": true,
   "privileged": [
-    "NET_ADMIN"
+    "NET_ADMIN",
+    "SYS_ADMIN",
+    "SYS_RAWIO",
+    "SYS_TIME",
+    "SYS_NICE"
   ],
   "map": [
-    "addons:rw"
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "share:rw",
+    "backup:rw"
   ],
   "devices": [
     "/dev/rfkill"
