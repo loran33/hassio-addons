@@ -31,6 +31,7 @@
   ],
   "options": {
     "interface": "wlan0",
+    "hw_mode": "b",
     "ssid": "!secret iot_ssid",
     "wpa_passphrase": "!secret iot_passphrase",
     "channel": "11",
@@ -41,11 +42,12 @@
     "fixed_ips": [{
       "name": "outlet1",
       "mac_address": "00:00:00:00:00",
-      "ip": "11.0.0.10"
+      "ip": "11.0.0.9"
     }]
   },
   "schema": {
     "interface": "str",
+    "hw_mode" : "str",
     "ssid": "str",
     "wpa_passphrase": "str",
     "channel": "int",

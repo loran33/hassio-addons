@@ -3,6 +3,7 @@
 CONFIG_PATH=/data/options.json
 
 INTERFACE=$(jq --raw-output ".interface" $CONFIG_PATH)
+HW_MODE=$(jq --raw-output ".hw_mode" $CONFIG_PATH)
 SSID=$(jq --raw-output ".ssid" $CONFIG_PATH)
 WPA_PASSPHRASE=$(jq --raw-output ".wpa_passphrase" $CONFIG_PATH)
 CHANNEL=$(jq --raw-output ".channel" $CONFIG_PATH)
@@ -45,6 +46,7 @@ eval "nmcli dev set $INTERFACE managed no"
 # Setup hostapd.conf
 echo "Setup hostapd ..."
 echo "interface=$INTERFACE"$'\n' >> /hostapd.conf
+echo "hw_mode=$HW_MODE"$'\n' >> /hostapd.conf
 echo "ssid=$SSID"$'\n' >> /hostapd.conf
 echo "wpa_passphrase=$WPA_PASSPHRASE"$'\n' >> /hostapd.conf
 echo "channel=$CHANNEL"$'\n' >> /hostapd.conf
