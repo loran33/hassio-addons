@@ -129,3 +129,25 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/node_modules
+package-lock.json
+xml_structuur_radio.PNG
+.gitattributes
+UkrpWebSiteStationList.json
+testres.json
+speakerips.txt
+client/upload/song.mp3
+client/upload/message.mp3
+postPayloadsSetChannel.txt
+client/js/devices.json
+server.key
+server.cert
+localhost.crt
+domains.ext
+localhost.csr
+localhost.key
+RootCA.crt
+RootCA.key
+RootCA.pem
+RootCA.srl
