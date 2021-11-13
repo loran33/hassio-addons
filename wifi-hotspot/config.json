@@ -12,20 +12,11 @@
   "apparmor": true,
   "host_dbus": true,
   "full_access": false,
+  
   "privileged": [
-    "NET_ADMIN",
-    "SYS_ADMIN",
-    "SYS_RAWIO",
-    "SYS_TIME",
-    "SYS_NICE"
+    "NET_ADMIN"
   ],
-  "map": [
-    "config:rw",
-    "ssl:rw",
-    "addons:rw",
-    "share:rw",
-    "backup:rw"
-  ],
+
   "devices": [
     "/dev/rfkill"
   ],
